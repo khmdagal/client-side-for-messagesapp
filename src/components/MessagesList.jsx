@@ -7,12 +7,11 @@ function MessagesList() {
   const [messages, setMessages] = useState([""]);
 
   useEffect(() => {
-    fetch(
-      `https://khadar-dagal-chat-server.glitch.me/messages?_sort=id&_sort=DESC`
-    )
+    fetch(`https://khadar-dagal-chat-server.glitch.me/messages`)
       .then((res) => res.json())
-      .then((data) => setMessages(data));
+      .then((data) => setMessages(data.reverse()));
   }, []);
+  //setMessages(data)
   //setMessages(data.sort((a,b)=>b-a))
   return (
     <div>
