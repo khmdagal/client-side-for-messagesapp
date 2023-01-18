@@ -18,7 +18,7 @@ function MessageForms() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://127.0.0.1:4500/allMessages", {
+    fetch("https://khadar-dagal-chat-server.glitch.me/allMessages", {
       method: "post",
       headers: {
         "Content-Type": "application/json",

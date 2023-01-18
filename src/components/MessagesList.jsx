@@ -7,7 +7,9 @@ function MessagesList() {
   const [messages, setMessages] = useState([""]);
 
   useEffect(() => {
-    fetch(`http://localhost:4500/messages?_sort=id&_sort=DESC`)
+    fetch(
+      `https://khadar-dagal-chat-server.glitch.me/messages?_sort=id&_sort=DESC`
+    )
       .then((res) => res.json())
       .then((data) => setMessages(data));
   }, []);
