@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
-
+import MessagesList from "./MessagesList";
 function MessageForms() {
   const [message, setMessage] = useState({
     from: "",
@@ -30,32 +30,35 @@ function MessageForms() {
   };
 
   return (
-    <form className="container">
-      <fieldset>
-        <h3 className="">Messages App</h3>
-        <div>
-          <label>Name </label>
-          <input
-            onChange={handleChange}
-            type="text"
-            name="from"
-            placeholder="Your Name"
-          />
-        </div>
-        <div>
-          <label>Message</label>
-          <input
-            onChange={handleChange}
-            type="text"
-            name="text"
-            placeholder="Your Message"
-          />
-        </div>
-        <Button onClick={handleSubmit} className="btn-secondary ">
-          Send
-        </Button>
-      </fieldset>
-    </form>
+    <>
+      <form className="container">
+        <fieldset>
+          <h3 className="">Messages App</h3>
+          <div>
+            <label>Name </label>
+            <input
+              onChange={handleChange}
+              type="text"
+              name="from"
+              placeholder="Your Name"
+            />
+          </div>
+          <div>
+            <label>Message</label>
+            <input
+              onChange={handleChange}
+              type="text"
+              name="text"
+              placeholder="Your Message"
+            />
+          </div>
+          <Button onClick={handleSubmit} className="btn-secondary ">
+            Send
+          </Button>
+        </fieldset>
+      </form>
+      <MessagesList />
+    </>
   );
 }
 

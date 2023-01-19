@@ -13,16 +13,19 @@ function MessagesList() {
   }, []);
   //setMessages(data)
   //setMessages(data.sort((a,b)=>b-a))
+  console.log(messages.length);
   return (
     <div>
-      {messages.map((message) => (
-        <MessageCard
-          key={counter++}
-          from={message.from}
-          text={message.text}
-          time={message.time}
-        />
-      ))}
+      {messages.length < 1
+        ? "There is no comments yet 💬"
+        : messages.map((message) => (
+            <MessageCard
+              key={counter++}
+              from={message.from}
+              text={message.text}
+              time={message.time}
+            />
+          ))}
     </div>
   );
 }
