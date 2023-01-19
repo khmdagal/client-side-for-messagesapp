@@ -29,6 +29,13 @@ function MessageForms() {
       .then((data) => data);
   };
 
+  // const getLocation = () => [
+  //   navigator.geolocation.getCurrentPosition(
+  //     data => { console.log(data) },
+  //     error => console.log(error)
+  //   )
+  // ]
+
   return (
     <>
       <form className="container">
@@ -45,14 +52,17 @@ function MessageForms() {
           </div>
           <div>
             <label>Message</label>
-            <input
+            <textarea
               onChange={handleChange}
               type="text"
               name="text"
               placeholder="Your Message"
             />
           </div>
-          <Button onClick={handleSubmit} className="btn-secondary ">
+          <Button
+            onClick={handleSubmit}
+            className="btn-secondary "
+          >
             Send
           </Button>
         </fieldset>
